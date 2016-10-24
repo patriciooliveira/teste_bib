@@ -16,28 +16,15 @@
 class Basico
 {
 private:
-    String tag, desc; //t_com, param, consumo;
+    char tag[50], desc[100]; //t_com, param, consumo;
     IPAddress ip_local;
 
-//    int estado_atual;
-//    int ciclo; //ciclo vai variar pra cada objeto derivado da classe
-
 public:
-//    Basico();
-
     Basico(String, String);  //construtor
-    //void Status();
+    void setTag(char []);// permitir alteração da tag
+    void conecta(char [], char []);
 
-// deve retornar o ip, a tag, descriçao, tipo de comunicação, parametros, estado atual e o consumo na ultima janela de tempo e o endereço de cada ação do dispositivo
-//retornar onde?
-
-    void config(String, String);
-
-// permitir alteração da tag e descrição,
-
-    void conecta(char*, char*);//ok
-    void post(int);
-   
+//    void post(int);
 //    void liga(); //alimenta o atuador
 //    void desliga(); // interrrompe o atuador
 //    void getValorAtuador();

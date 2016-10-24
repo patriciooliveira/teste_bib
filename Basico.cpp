@@ -8,48 +8,34 @@
 //    this->t_com = "nenhuma comunicacao";
 
 //}
-Basico::Basico(String t, String d)
+Basico::Basico(char t[], char d[])
 {
     this->tag = t;
     this->desc = d;
-}
+}//construtor
 
-void Basico::config(String t, String d)
+void Basico::setTag(char t[])
 {
     this->tag = t;
-    this->desc = d;
 }
 
-void Basico::conecta(char* rede, char* senha)
+void Basico::conecta(char rede[], char senha[])
 {
-//    WiFi.begin(rede, senha);
-//    while(WiFi.status() != WL_CONNECTED)
-//    {
-//        delay(500);
-//    }
-//    this->ip = WiFi.localIP();
-    
-    //PARA TESTE
-    
-    Serial.begin(115200);
-    
-    WiFi.begin(rede, senha);//
-    Serial.println("conectando");
-    while (WiFi.status() != WL_CONNECTED) {
-      delay(500);
-      Serial.print(".");
+    WiFi.begin(rede, senha);
+    while(WiFi.status() != WL_CONNECTED)
+    {
+        delay(500);
     }
     this->ip = WiFi.localIP();
-    Serial.print(WiFi.localIP());
     
-    Serial.end();
-    
+    //PARA TESTE
+       
     
 }
 
 void Basico::post(int valor)
 {
-    HTTPClient http;
+      HTTPClient http;//cria o objeto http
       http.begin("http://" + "aqui vai o ip do nó central" + "/yii/web/index.php?r=sensor/create/");
       http.addHeader("Content-Type", "application/json; charset=UTF-8");
       int httpCode = http.POST("{\"tag\":\"ESP-4\",\"valor\":" +
@@ -65,6 +51,6 @@ void Basico::post(int valor)
       //      Serial.println(" " + payload);
       http.end();
 
-}
+}//faz isso de forma genérica, utilizando a tag do objeto aqui
 
 
