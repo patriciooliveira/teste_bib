@@ -17,7 +17,6 @@ class Basico
 private:
     char *tag;
     char *desc; //t_com, param, consumo;
-    IPAddress ip_local;
 
 public:
     Basico(char *, char *);  //construtor

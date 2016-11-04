@@ -21,7 +21,7 @@ void Basico::setTag(char *t)
 
 IPAddress Basico::getIp()
 {
-    return this->ip_local;
+    return WiFi.localIP();
 }
 
 void Basico::conecta(char *rede, char *senha)
@@ -31,7 +31,6 @@ void Basico::conecta(char *rede, char *senha)
     {
         delay(500);
     }
-    this->ip_local = WiFi.localIP();
 
     //PARA TESTE
 
