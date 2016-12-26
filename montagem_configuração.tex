@@ -1,0 +1,67 @@
+%versão 0.01
+\documentclass[a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\title{Utilização do ESP8266}
+\author{Josiel Patricio Pereira de Oliveira}
+
+\begin{document}
+\maketitle
+
+%\begin{abstract}
+%Your abstract.
+%\end{abstract}
+
+\section{Introdução}
+
+\paragraph{}
+Este trabalho tem como objetivo servir de material introdutório à utilização e programação do chip ESP8266 como microcontrolador e não  apenas 
+como periférico de acesso à redes sem fio. Tal material é destinados aos alunos ingressantes  no projeto de Automação Residencial via padrões abertos.
+
+\section{IDE} 
+
+\paragraph{}
+Ambiente de desenvolvimento integrado
+software que agrega em si editores de texto para edição do código fonte um compilador que traduz o código fonte para linguagem de máquina e no caso de IDE utilizada será a da plataforma arduino.
+
+
+\subsection{Configuração da IDE}
+Para adicionar as placas referentes aos módulos produzidos com o ESP8266 é préciso seguir os seguintes passos:
+\begin{enumerate}
+
+\item Clicar em Arquivo → Preferências (ou simplesmente Ctrl + “,”)
+\item No campo URLs Adicionais de Gerenciadores de Placa: digitar\\
+\verb|http://arduino.esp8266.com/stable/package_esp8266com_index.json|
+clicar em OK 
+\item Clicar em Ferramentas → Placa → Gerenciador de Placas \dots 
+\item Na nova caixa Gerenciador de Placas, rolar a barra de rolagem até encontrar esp8266.
+\item Selecionar a versão e clicar em instalar.
+\end{enumerate}
+%explipar utilização da ide e as configurações imagens 
+
+\section{componentes de Hardware}
+Para utilização de módulos não são necessários mais que quatro resistores e um capacitor, a depender do módulo, além da fonte de energia claro.
+Porém para a gravação é preciso de algum componentes de hardware adicionais como por exemplo um conversos serial ou um gravador para que seja possível a comunicação entre o microcontrolador e a máquina que está rodando o software de gravação.
+
+\subsection{Gravando e executando o primeiro programa}
+\begin{enumerate}
+\item Conversor USB-UART
+\item Alimentação 3,3V
+\item Módulo ESP.
+\item resistor 10K$\Omega$
+\end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{conexao_minima.png}
+\end{figure}
+
+http://www.fritzenlab.com.br/2016/03/wifi-esp12-esp8266-programando-com-ide.html
+
+http://br-arduino.org/2015/08/nodemcu-esp8266.html
+
+\end{document}
